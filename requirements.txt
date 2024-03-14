@@ -1,0 +1,5 @@
+Django==5.0.3
+django-rest-framework==0.1.0
+djangorestframework==3.14.0
+drf-nested-routers==0.93.5
+pillow==10.2.0

@@ -162,3 +162,4 @@ credentials.json
 settings.json
 .venv/
 .DS_Store
+media/
