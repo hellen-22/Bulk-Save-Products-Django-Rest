@@ -19,9 +19,9 @@ class CreateAndListProductsSerializer(serializers.ModelSerializer):
         variants = validated_data.pop('variants')
         product = Product.objects.create(**validated_data)
 
-        for variant in variants:
-            variant['product'] = product
-            ProductVariant.objects.create(**variant)
+        product_variants = [ProductVariant(product=product, **item,) for item in variants]
+
+        ProductVariant.objects.bulk_create(product_variants)
 
         return product
 
